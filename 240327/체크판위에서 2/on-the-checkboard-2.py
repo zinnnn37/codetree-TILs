@@ -15,8 +15,7 @@ for i in range(1, r-2):
             nxt = matrix[i][j]
             for a in range(i+1, r-1):
                 for b in range(j+1, c-1):
-                    if matrix[a][b] != nxt:
-                        if matrix[-1][-1] == nxt:
+                    if matrix[a][b] != nxt and matrix[-1][-1] == nxt:
                             cnt += 1
 
 print(cnt)
