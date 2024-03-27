@@ -9,7 +9,7 @@ except:
 
 i = 0
 res = 0
-while (i <= length):
+while (i < length):
     res += int(n[length - i - 1]) * pow(2, i)
     i += 1
 
