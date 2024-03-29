@@ -67,4 +67,4 @@ for i in range(n):
                     tmp = nums[i] + nums[j] + nums[k]
                     res = max(res, tmp)
 
-print(res)
+print(res if res > 0 else -1)
