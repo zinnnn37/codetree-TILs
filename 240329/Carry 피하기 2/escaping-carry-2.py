@@ -59,12 +59,12 @@ def check_carry(x, y):
 
 for i in range(n):
     tmp = nums[i]
-    for j in range(i, n):
-        if not check_carry(tmp, nums[j]):
-            tmp += nums[j]
-            for k in range(j, n):
+    for j in range(i+1, n):
+        if not check_carry(nums[i], nums[j]):
+            tmp = nums[i] + nums[j]
+            for k in range(j+1, n):
                 if not check_carry(tmp, nums[k]):
-                    tmp += nums[k]
+                    tmp = nums[i] + nums[j] + nums[k]
                     res = max(res, tmp)
 
 print(res)
