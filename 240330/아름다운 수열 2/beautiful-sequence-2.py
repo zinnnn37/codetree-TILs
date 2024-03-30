@@ -7,7 +7,7 @@ for i in range(n-m+1):
     for j in range(m):
         if a[i+j] not in b:
             break
-        if j == 2 and a[i+j] in b:
+        if j == m-1 and a[i+j] in b:
             cnt += 1
 
 print(cnt)
