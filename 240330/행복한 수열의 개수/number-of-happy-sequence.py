@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 nums = [list(map(int, input().split())) for _ in range(n)]
 
-cnt = 0
+cnt = 0 if n > 1 else 2
 for i in range(n):
     # count row
     row = 1
