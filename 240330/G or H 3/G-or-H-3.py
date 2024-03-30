@@ -15,9 +15,9 @@ right = 0
 res = 0
 tmp = 0
 while (left < n and right < n):
-    if lst[right][0] - lst[left][0] > k:
-        left += 1
+    if lst[right][0] - lst[left][0] + 1 > k:
         tmp -= GH(lst[left][1])
+        left += 1
         res = max(res, tmp)
         continue
 
