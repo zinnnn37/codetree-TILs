@@ -8,12 +8,14 @@ res = 0
 
 # 3*1 1*3
 for i in range(n):
-    for j in range(n-2):
+    for j in range(m-2):
         res = max(res, sum(nums[i][j:j+3]))
 
+for i in range(n-2):
+    for j in range(m):
         tmp = 0
         for k in range(3):
-            tmp += nums[j+k][i]
+            tmp += nums[i+k][j]
         res = max(res, tmp)
     
 
