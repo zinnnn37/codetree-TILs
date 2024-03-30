@@ -20,7 +20,7 @@ for i in range(n-2):
     
 
 for i in range(n):
-    for j in range(n):
+    for j in range(m):
         for k in range(4):
             nx = i + dx[k]
             ny = j + dy[k]
