@@ -54,3 +54,5 @@ if black:
 elif white:
     print(2)
     print(white[0], white[1])
+else:
+    print(0)
