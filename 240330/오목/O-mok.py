@@ -11,7 +11,7 @@ def go(x, y, color, cnt, dx, dy):
     nx = x + dx
     ny = y + dy
 
-    if visited[nx][ny] == False and board[nx][ny] == color and 0 <= nx < 19 and 0 <= ny < 19:
+    if 0 <= nx < 19 and 0 <= ny < 19 and visited[nx][ny] == False and board[nx][ny] == color:
         visited[nx][ny] = True
         ret = go(nx, ny, color, cnt+1, dx, dy)
         visited[nx][ny] = False
@@ -24,7 +24,7 @@ def find(x, y, color, cnt):
         nx = x + dx[n]
         ny = y + dy[n]
 
-        if visited[nx][ny] == False and board[nx][ny] == color and 0 <= nx < 19 and 0 <= ny < 19:
+        if 0 <= nx < 19 and 0 <= ny < 19 and visited[nx][ny] == False and board[nx][ny] == color:
             visited[nx][ny] = True
             ret = go(nx, ny, color, cnt+1, dx[n], dy[n])
             visited[nx][ny] = False
