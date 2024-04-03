@@ -6,7 +6,7 @@ gold = 0
 def count_gold(x, y, k):
     cnt = 0
     for i in range(-k, k+1):
-        for j in range(-k + abs(i), k - abs(i) + 1):
+        for j in range(-k + abs(i), k - abs(i) + 1): # 다이아몬드 모양으로 탐색
             nx = x + i
             ny = y + j
 
@@ -17,9 +17,9 @@ def count_gold(x, y, k):
 for i in range(n):
     for j in range(n):
         for k in range(n * 2 - 1):
-            visited = [['.' for _ in range(n)] for _ in range(n)]
             cnt = 0
             cost = k * k + (k+1) * (k+1)
+
             cnt += count_gold(i, j, k)
 
             if cnt * m >= cost:
