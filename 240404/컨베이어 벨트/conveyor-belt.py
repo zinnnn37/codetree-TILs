@@ -5,8 +5,8 @@ conveyor = [list(map(int, input().split())) for _ in range(2)]
 
 def push(q):
     for _ in range(t):
-        tmp = q.popleft()
-        q.append(tmp)
+        tmp = q.pop()
+        q.appendleft(tmp)
 
 q = deque()
 
