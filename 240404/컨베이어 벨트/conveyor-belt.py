@@ -1,21 +1,22 @@
+from collections import deque
+
 n, t = map(int, input().split())
 conveyor = [list(map(int, input().split())) for _ in range(2)]
-tmp = [0] * (n * 2 + 1000)
 
-j = 0
-for i in range(n * 2):
-    tmp[i] = conveyor[i // n][j]
-    j += 1
-    if j == n:
-        j = 0
+def push(q):
+    for _ in range(t):
+        tmp = q.popleft()
+        q.append(tmp)
 
-for i in range(n*2-1, -1, -1):
-    tmp[i+t] = tmp[i]
+q = deque()
 
-for i in range(n*2-1+t, n*2-1, -1):
-    tmp[i-n*2] = tmp[i]
+for i in range(2):
+    for j in range(n):
+        q.append(conveyor[i][j])
 
-for i in range(n * 2):
+push(q)
+
+for i in range(n*2):
     if i == n:
         print()
-    print(tmp[i], end=' ')
+    print(q[i], end=' ')
