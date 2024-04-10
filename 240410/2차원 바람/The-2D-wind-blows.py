@@ -43,10 +43,10 @@ for _ in range(q):
     shift(r1, c1, r2, c2)
     get_avg(r1, c1, r2, c2)
 
-    for i in range(n):
-        for j in range(m):
-            if ans[i][j] == -1:
-                ans[i][j] = grid[i][j]
+for i in range(n):
+    for j in range(m):
+        if ans[i][j] == -1:
+            ans[i][j] = grid[i][j]
 
 for a in ans:
     print(*a)
