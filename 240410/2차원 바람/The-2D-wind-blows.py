@@ -5,6 +5,12 @@ ans = [[-1 for _ in range(m)] for __ in range(n)]
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
 
+def switch_grid():
+    for i in range(n):
+        for j in range(m):
+            if ans[i][j] != -1:
+                grid[i][j] = ans[i][j]
+
 def shift(r1, c1, r2, c2):
     tmp = grid[r1][c1]
 
@@ -42,12 +48,8 @@ for _ in range(q):
     r1, c1, r2, c2 = [x - 1 for x in map(int, input().split())]
     shift(r1, c1, r2, c2)
     get_avg(r1, c1, r2, c2)
+    switch_grid()
 
-for i in range(n):
-    for j in range(m):
-        if ans[i][j] == -1:
-            ans[i][j] = grid[i][j]
-
-for a in ans:
-    print(*a)
+for g in grid:
+    print(*g)
 print()
