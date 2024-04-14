@@ -4,11 +4,14 @@ s = deque(input())
 res = s[0]
 ans = 11
 n = 0
+shift = 0
+shift_min = 123
 
 while n < len(s):
     while n < len(s) and s[0] == s[-1]:
         s.appendleft(s.pop())
         n += 1
+        shift += 1
 
     cnt = 1
     for i in range(1, len(s)):
@@ -21,8 +24,12 @@ while n < len(s):
 
     res += str(cnt)
 
-    if ans > len(res):
+    if shift < shift_min:
         ans = len(res)
+        shift_min = shift
+    elif shift == shift_min and ans > len(res):
+        ans = len(res)
+
     s.appendleft(s.pop())
     n += 1
 
