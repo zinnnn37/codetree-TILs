@@ -1,14 +1,11 @@
 n = int(input())
-arr = list(map(int, input().split()))
+nums = list(map(int, input().split()))
 
-ans = -2e9
-total = 0;
-for i in range(n):
-    if total < 0:
-        total = arr[i]
-    else:
-        total += arr[i]
-    
+total = nums[0]
+ans = nums[0]
+
+for i in range(1, n):
+    total = max(nums[i], total + nums[i])
     ans = max(ans, total)
 
 print(ans)
