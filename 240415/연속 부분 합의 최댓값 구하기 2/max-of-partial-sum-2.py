@@ -1,8 +1,23 @@
 n = int(input())
-nums = list(map(int, input().split()))
+arr = list(map(int, input().split()))
 
-total = -2e9
+ans = -2e9
+total = 0;
 for i in range(n):
-    total = max(nums[i], total + nums[i])
+    if total < 0:
+        total = arr[i]
+    else:
+        total += arr[i]
+    
+    ans = max(ans, total)
 
-print(total)
+print(ans)
+
+# n = int(input())
+# nums = list(map(int, input().split()))
+
+# total = 0
+# for i in range(n):
+#     total = max(nums[i], total + nums[i])
+
+# print(total)
