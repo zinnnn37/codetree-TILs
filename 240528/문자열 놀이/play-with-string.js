@@ -2,7 +2,9 @@ const fs = require('fs');
 const [input, ...inputQuery] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 let [s, q] = input.split(' ');
-const query = []
+q = Number(q);
+const len = s.length;
+let query = [];
 for (let i = 0; i < q; i++) {
     query.push(inputQuery[i].split(' '));
 }
@@ -18,8 +20,12 @@ function swipe(a, b) {
 }
 
 function exchange(cur, toChange) {
-    while (s.includes(cur)) {
-        s = s.replace(cur, toChange);
+    for (let i = 0; i < len; i++) { 
+        if (s[i] === cur) {
+            let strToArr = [...s];
+            strToArr[i] = toChange;
+            s = strToArr.join('');
+        }
     }
 }
 
