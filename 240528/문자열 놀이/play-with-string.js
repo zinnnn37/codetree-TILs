@@ -18,17 +18,8 @@ function swipe(a, b) {
 }
 
 function exchange(cur, toChange) {
-    let strToArr = [...s];
-
-    while (true) {
-        const idx = strToArr.indexOf(cur);
-
-        if (idx > -1) {
-            strToArr[idx] = toChange;
-        } else {
-            s = strToArr.join('');
-            return;
-        }
+    while (s.includes(cur)) {
+        s = s.replace(cur, toChange);
     }
 }
 
