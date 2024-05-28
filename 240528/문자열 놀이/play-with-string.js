@@ -17,9 +17,18 @@ function swipe(a, b) {
     strToArr[b] = tmp;
 
     s = strToArr.join('');
+
+    // slice 이용해도 됨(exchange도 마찬가지)
+    /*
+    const tmp = s[a];
+
+    s = s.slice(0, a) + s[b] + s.slice(a+1);
+    s = s.slice(0, b) + tmp + s.slice(b+1);
+    */
 }
 
 function exchange(cur, toChange) {
+    // 여기서 includes로 확인해서 시간복잡도 n^3 된 듯
     for (let i = 0; i < len; i++) { 
         if (s[i] === cur) {
             let strToArr = [...s];
